@@ -6,6 +6,7 @@ from collections import OrderedDict
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 proxies = {'http':'http://127.0.0.1:8082', 'https':'http://127.0.0.1:8082'}
+
 def HTTPRequestSmugglingTesting(url, requesttype, path):
    fullurl = url + path
    headers = OrderedDict({"Cookie": None, "Accept-Language": None, "User-Agent": None,"Dnt": None,"Accept-Encoding": None,
@@ -76,7 +77,6 @@ def HTTPRequestSmugglingTesting(url, requesttype, path):
 
 
    else:
-
     s = requests.Session()
     s.headers = {}
     de = s.delete(fullurl, headers=headers, verify=False, proxies=proxies, data=data)
@@ -85,13 +85,6 @@ def HTTPRequestSmugglingTesting(url, requesttype, path):
 
     print(de.status_code)
     print(no.status_code)
-
-
-
-
-
-
-
 
 
 
