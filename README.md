@@ -1,4 +1,4 @@
-# bugbountytools
+# bugbountyscripts
 A list of all the automation scripts created by me using python <br>
 
 #domainlife.py 
