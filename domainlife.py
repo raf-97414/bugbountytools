@@ -6,8 +6,6 @@ import platform
 import os
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-proxies = {'http':'http://127.0.0.1:8082', 'https':'http://127.0.0.1:8082'}
-
 
 
 def check_if_up(response, sub, name):
@@ -16,7 +14,7 @@ def check_if_up(response, sub, name):
        f = open("{0}.txt".format(name), 'a')
        if response == 0:
         print("{0} is up".format(sub))
-        f.write("{0} is up".format(sub))
+        f.write("{0} is up \n".format(sub))
         f.close()
       else:
         print("{0} is down".format(sub))
@@ -53,7 +51,6 @@ def controlling_the_number_of_packets(sub, num, name):
       print("Keyboard interrupt exception Caught")
 
 
-
 def controlling_the_size_of_packet(sub, num, num1, name):
     try:
        if (platform.system().lower() == 'windows'):
@@ -78,6 +75,7 @@ def changing_the_time_interval(sub, num, num1, name):
   except KeyboardInterrupt:
       print("Keyboard interrupt exception Caught")
 
+
 def summary(sub, num, name):
    try:
     if (platform.system().lower() == 'windows'):
@@ -90,6 +88,7 @@ def summary(sub, num, name):
 
    except KeyboardInterrupt:
       print("Keyboard interrupt exception Caught")
+      
 
 def timeout(sub, num, name):
    try:
@@ -168,26 +167,7 @@ def specify_TTL(sub, num, num1, name):
         check_if_up(response, sub, name)
    except KeyboardInterrupt:
        print("Keyboard interrupt exception Caught")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      
 
 
 if '__main__' == __name__:
